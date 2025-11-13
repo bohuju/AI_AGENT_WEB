@@ -1,0 +1,12 @@
+# Python dependencies for the harness-generation toolkit.
+# -----------------------------------------------
+# Versions are intentionally left open but pegged to reasonably
+# recent releases that are available on PyPI.
+#
+# • GitPython      – git wrapper used by CodexHelper & batch scripts
+# • PyYAML         – parsing of <targets>.yaml files
+# • python-dotenv  – loading OPENAI_API_KEY from .env files
+
+PyYAML>=5.4
+GitPython>=3.1
+python-dotenv>=1.0

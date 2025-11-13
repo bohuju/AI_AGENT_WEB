@@ -1,0 +1,13 @@
+asgiref==3.10.0
+Django==5.2.7
+djangorestframework==3.16.1
+dotenv==0.9.9
+gitdb==4.0.12
+GitPython==3.1.45
+graphviz==0.21
+python-dotenv==1.2.1
+PyYAML==6.0.3
+smmap==5.0.2
+sqlparse==0.5.3
+typing_extensions==4.15.0
+uritemplate==4.2.0

@@ -1,0 +1,409 @@
+projects:
+  - project_name: apache-httpd
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: bc-gh
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: bind9
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: bluez
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: cairo
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: cgif
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: civetweb
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: clib
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: cmake
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: coturn
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: cpuinfo
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: croaring
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: cryptsetup
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: cups
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: cyclonedds
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: dbus-broker
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: dnsmasq
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: dovecot
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: e2fsprogs
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: edk2
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: faad2
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: flex
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: freerdp
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: fribidi
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: fwupd
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: gdbm
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: gdk-pixbuf
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: gnucobol
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: gpac
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: gpsd
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: gss-ntlmssp
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: h3
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: hdf5
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: hiredis
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: hwloc
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: igraph
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: inchi
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: inih
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: jpegoptim
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: jq
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: kamailio
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: krb5
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libbpf
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libcacard
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libconfig
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libcue
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libdwarf
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libfuse
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libiec61850
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libjpeg-turbo
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: liblouis
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libmodbus
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: liboqs
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libpg_query
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libproxy
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libredwg
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libsndfile
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libspdm
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libssh
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libucl
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libunwind
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libwebsockets
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libxlsxwriter
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libyal
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: libyang
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: lighttpd
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: lldpd
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: llhttp
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: lua
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: lxc
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: md4c
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: mdbtools
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: memcached
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: miniz
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: mosquitto
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: mpv
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: ms-tpm-20-ref
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: msquic
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: networkmanager
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: nginx
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: nokogiri
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: ntpsec
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: numactl
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: oniguruma
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: open5gs
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: opendds
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: opensips
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: openslide
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: openvpn
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: opusfile
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: oss-fuzz-example
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: ostree
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: p11-kit
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: pacemaker
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: pidgin
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: pjsip
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: plan9port
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: pngquant
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: postfix
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: postgresql
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: proftpd
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: protobuf-c
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: pupnp
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: pycryptodome
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: python3-libraries
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: qemu
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: quickjs
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: rabbitmq-c
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: rauc
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: rtpproxy
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: samba
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: selinux
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: sound-open-firmware
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: spdk
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: sudoers
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: tarantool
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: tdengine
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: tinysparql
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: tmux
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: unbound
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: unit
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: utf8proc
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: util-linux
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: varnish
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: vlc
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: vulkan-loader
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: w3m
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: wamr
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: wasm3
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: wazuh
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: wolfmqtt
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: xbps
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: xen
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: xs
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: zip
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
+  - project_name: zydis
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master

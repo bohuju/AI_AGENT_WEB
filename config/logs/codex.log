@@ -1,0 +1,43 @@
+2025-10-28 10:53:34,144 MainProcess MainThread codex.settings.hypercorn INFO Copied default config to /home/bohuju/sherpa/config/hypercorn.toml
+2025-10-28 10:53:34,144 MainProcess MainThread codex.settings.hypercorn INFO Loaded config from /home/bohuju/sherpa/config/hypercorn.toml
+2025-10-28 02:53:34,756 MainProcess ThreadPoolExecutor-0_0 codex.lifespan INFO Created admin user.
+2025-10-28 02:53:34,758 MainProcess ThreadPoolExecutor-0_0 codex.lifespan INFO Created AdminFlag: Enable Folder View = True
+2025-10-28 02:53:34,760 MainProcess ThreadPoolExecutor-0_0 codex.lifespan INFO Created AdminFlag: Enable Registration = True
+2025-10-28 02:53:34,762 MainProcess ThreadPoolExecutor-0_0 codex.lifespan INFO Created AdminFlag: Enable Non Users = True
+2025-10-28 02:53:34,763 MainProcess ThreadPoolExecutor-0_0 codex.lifespan INFO Created AdminFlag: Enable Auto Update = False
+2025-10-28 02:53:34,809 MainProcess flood-control codex.websocket_server INFO Started Broadcast Flood Control Worker.
+2025-10-28 02:53:34,812 MainProcess MainThread hypercorn.error INFO Running on http://0.0.0.0:9810 (CTRL + C to quit)
+2025-10-28 02:53:34,836 librarian crond codex.librarian.crond INFO Started cron
+2025-10-28 02:53:34,837 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Librarian started threads and waiting for tasks.
+2025-10-28 02:53:34,853 librarian ThreadPoolExecutor-0_0 codex.librarian.vacuum INFO Vacuumed database. Saved 0 bytes
+2025-10-28 02:53:51,735 MainProcess MainThread codex.signals INFO Asking hypercorn to shut down gracefully. Could take 5 seconds...
+2025-10-28 02:53:54,740 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Shutting down Librarian...
+2025-10-28 02:53:54,740 librarian crond codex.librarian.crond INFO Stopped cron.
+2025-10-28 02:53:54,741 librarian ThreadPoolExecutor-0_0 codex.librarian.watcherd INFO Stopped watching all libraries
+2025-10-28 02:53:54,747 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Stopped Librarian.
+2025-10-28 02:53:54,749 MainProcess flood-control codex.websocket_server INFO Stopped Broadcast Flood Control Worker.
+2025-10-28 02:55:49,405 MainProcess MainThread codex.run INFO Goodbye.
+2025-10-28 10:55:52,595 MainProcess MainThread codex.settings.hypercorn INFO Loaded config from /home/bohuju/sherpa/config/hypercorn.toml
+2025-10-28 02:55:52,920 MainProcess flood-control codex.websocket_server INFO Started Broadcast Flood Control Worker.
+2025-10-28 02:55:52,923 MainProcess MainThread hypercorn.error INFO Running on http://0.0.0.0:9810 (CTRL + C to quit)
+2025-10-28 02:55:52,946 librarian crond codex.librarian.crond INFO Started cron
+2025-10-28 02:55:52,947 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Librarian started threads and waiting for tasks.
+2025-10-28 02:56:19,084 MainProcess MainThread codex.signals INFO Asking hypercorn to shut down gracefully. Could take 5 seconds...
+2025-10-28 02:56:22,089 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Shutting down Librarian...
+2025-10-28 02:56:22,090 librarian ThreadPoolExecutor-0_0 codex.librarian.watcherd INFO Stopped watching all libraries
+2025-10-28 02:56:22,091 librarian crond codex.librarian.crond INFO Stopped cron.
+2025-10-28 02:56:22,096 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Stopped Librarian.
+2025-10-28 02:56:22,099 MainProcess flood-control codex.websocket_server INFO Stopped Broadcast Flood Control Worker.
+2025-10-28 02:56:31,866 MainProcess MainThread codex.run INFO Goodbye.
+2025-10-28 10:56:41,345 MainProcess MainThread codex.settings.hypercorn INFO Loaded config from /home/bohuju/sherpa/config/hypercorn.toml
+2025-10-28 02:56:41,651 MainProcess flood-control codex.websocket_server INFO Started Broadcast Flood Control Worker.
+2025-10-28 02:56:41,654 MainProcess MainThread hypercorn.error INFO Running on http://0.0.0.0:9810 (CTRL + C to quit)
+2025-10-28 02:56:41,675 librarian crond codex.librarian.crond INFO Started cron
+2025-10-28 02:56:41,676 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Librarian started threads and waiting for tasks.
+2025-10-28 02:56:44,714 MainProcess MainThread codex.signals INFO Asking hypercorn to shut down gracefully. Could take 5 seconds...
+2025-10-28 02:56:47,719 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Shutting down Librarian...
+2025-10-28 02:56:47,719 librarian ThreadPoolExecutor-0_0 codex.librarian.watcherd INFO Stopped watching all libraries
+2025-10-28 02:56:47,720 librarian crond codex.librarian.crond INFO Stopped cron.
+2025-10-28 02:56:47,728 librarian ThreadPoolExecutor-0_0 codex.librarian.librariand INFO Stopped Librarian.
+2025-10-28 02:56:47,732 MainProcess flood-control codex.websocket_server INFO Stopped Broadcast Flood Control Worker.
+2025-10-28 02:57:26,033 MainProcess MainThread codex.run INFO Goodbye.

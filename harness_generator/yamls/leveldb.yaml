@@ -1,0 +1,4 @@
+projects:
+  - project_name: leveldb
+    fuzz_tooling_url: git@github.com:google/oss-fuzz.git
+    fuzz_tooling_ref: master
