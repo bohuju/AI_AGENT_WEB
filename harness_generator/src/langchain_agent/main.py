@@ -36,7 +36,21 @@ class fuzz_model(BaseModel):
     model: str = "deepseek-chat"
     temperature: float = 0.5
     timeout: int = 10
-    max_tokens: int = 1000
+    max_tokens: int = 1024
+    time_budget:int = 900
+    rounds: int = 5
+
+class login_model(BaseModel):
+    username: str
+    password: str
+
+@app.post("/login_check")
+async def login_check(data: login_model):
+    admin_user = os.environ.get("ADMIN_USER", "bohuju")
+    admin_pass = os.environ.get("ADMIN_PASS", "lsl1234")
+    if data.username == admin_user and data.password == admin_pass:
+        return {"success": True}
+    return {"success": False, "message": "用户名或密码错误"}
 
 @app.post("/chat_with_agent")#和智能体对话，测试用例
 def chat(request: chat_model = Body(...)):
@@ -53,16 +67,29 @@ def chat(request: chat_model = Body(...)):
 def fuzz_code(request: fuzz_model = Body(...)):
     """对代码仓库进行模糊测试"""
     print("Received fuzzing request for URL:", request.code_url)
-    fuzz_logic(request.code_url)
+    fuzz_logic(request.code_url,request.max_tokens, request.time_budget)
     return {"status": "Fuzzing report generated."}
 
-
 @app.get("/", response_class=HTMLResponse)
+async def root_login():
+    # 登录页
+    path = os.path.join(static_dir, "login.html")
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read()
+    
+@app.get("/dashboard", response_class=HTMLResponse)
 async def index():
+    # 模糊测试主页（登录通过后重定向到 /dashboard）
     path = os.path.join(static_dir, "index.html")
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
 
+@app.get("/register", response_class=HTMLResponse)
+async def register():
+    # 注册页
+    path = os.path.join(static_dir, "register.html")
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read()
 
 if __name__ == "__main__":
     import uvicorn

@@ -14,13 +14,15 @@ from pathlib import Path
 
 load_dotenv()
 
-def fuzz_logic(repo_url: str) -> str:
+def fuzz_logic(repo_url: str,max_len: int, time_budget:int) -> str:
     repospec = RepoSpec(
         url=f"{repo_url}"
     )
     generator = NonOssFuzzHarnessGenerator(
     repo_spec= repospec,
-    ai_key_path=Path("./.env"),)
+    ai_key_path=Path("./.env"),
+    max_len=max_len,
+    time_budget_per_target = time_budget)
     generator.generate()
     return "Fuzzing completed."
 

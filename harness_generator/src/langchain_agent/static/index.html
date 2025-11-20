@@ -1,253 +1,418 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LangChain Agent - 智能助手</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>代码模糊测试</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 900px;
-            width: 100%;
-            overflow: hidden;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1628 100%);
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
+    /* 背景装饰：金色光晕 */
+    body::before {
+      content: '';
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -150px;
+      left: -150px;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        .header h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
+    body::after {
+      content: '';
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: -100px;
+      right: -100px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* 左上角图片 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background: url('/static/images/logo-top-left.png') no-repeat top left;
+      background-size: contain;
+      z-index: 10;
+      pointer-events: none;
+    }
 
-        .header p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
+    /* 右下角图片 */
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 400px;
+      height: 400px;
+      background: url('/static/images/logo-bottom-right.png') no-repeat bottom right;
+      background-size: contain;
+      z-index: 10;
+      pointer-events: none;
+    }
 
-        .content {
-            padding: 40px;
-        }
+    .card {
+      width: 760px;
+      background: linear-gradient(135deg, #1a1f3a 0%, #252d47 100%);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(212, 175, 55, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      position: relative;
+      z-index: 1;
+    }
 
-        .section {
-            margin-bottom: 40px;
-        }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      border-radius: 16px 16px 0 0;
+    }
 
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
+    h1 {
+      margin-bottom: 6px;
+      color: #d4af37;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-        .section-title::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin-right: 10px;
-            border-radius: 2px;
-        }
+    p {
+      color: #a0a9c9;
+      margin-bottom: 24px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .form-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
 
-        label {
-            display: block;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
+    .col {
+      flex: 1;
+    }
 
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #d4af37;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
 
-        input[type="text"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
+    input[type="text"], input[type="email"], input[type="number"], select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #e8e8e8;
+      font-size: 13px;
+      transition: all 300ms ease;
+    }
 
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
+    input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="number"]::placeholder {
+      color: rgba(160, 169, 201, 0.4);
+    }
 
-        .button-group {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
+    input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, select:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #d4af37;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+    }
 
-        button {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    .radio-group {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
+    .radio-group label {
+      margin: 0;
+      color: #e8e8e8;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
 
-        .btn-primary:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
+    .radio-group input[type="radio"] {
+      margin-right: 6px;
+      accent-color: #d4af37;
+    }
 
-        .btn-primary:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
+    .btn {
+      background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+      color: #0a0e27;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 300ms ease;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
 
-        button:active:not(:disabled) {
-            transform: translateY(0);
-        }
+    .btn:hover {
+      background: linear-gradient(135deg, #e8c547 0%, #f0d560 100%);
+      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.4);
+      transform: translateY(-2px);
+    }
 
-        .result-box {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 15px;
-            max-height: 300px;
-            overflow-y: auto;
-            font-size: 13px;
-            line-height: 1.6;
-            color: #333;
-        }
+    .btn:active {
+      transform: translateY(0);
+    }
 
-        .result-box.loading {
-            color: #667eea;
-        }
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
 
-        .result-box.error {
-            background: #fff5f5;
-            border-color: #feb2b2;
-            color: #c53030;
-        }
+    .btn.secondary {
+      background: rgba(212, 175, 55, 0.1);
+      color: #d4af37;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: none;
+    }
 
-        .result-box.success {
-            background: #f0fff4;
-            border-color: #9ae6b4;
-            color: #22543d;
-        }
+    .btn.secondary:hover {
+      background: rgba(212, 175, 55, 0.15);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    }
 
-        .status-icon {
-            margin-right: 8px;
-        }
+    .toggle-adv {
+      background: none;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #d4af37;
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      transition: all 300ms ease;
+      margin-top: 12px;
+    }
 
-        .divider {
-            height: 1px;
-            background: #e9ecef;
-            margin: 40px 0;
-        }
+    .toggle-adv:hover {
+      background: rgba(212, 175, 55, 0.08);
+      border-color: #d4af37;
+    }
 
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 24px;
-            }
+    .hint {
+      font-size: 12px;
+      color: #8892b0;
+      margin-top: 6px;
+      letter-spacing: 0.3px;
+    }
 
-            .content {
-                padding: 20px;
-            }
+    .result-box {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: rgba(212, 175, 55, 0.05);
+      display: none;
+      line-height: 1.6;
+    }
 
-            .button-group {
-                flex-direction: column;
-            }
-        }
-    </style>
+    .result-box.loading {
+      display: block;
+      color: #a0d4ff;
+      border-color: rgba(160, 212, 255, 0.3);
+      background: rgba(160, 212, 255, 0.05);
+    }
+
+    .result-box.success {
+      display: block;
+      background: rgba(76, 175, 80, 0.05);
+      border-color: rgba(76, 175, 80, 0.3);
+      color: #7ce88d;
+    }
+
+    .result-box.error {
+      display: block;
+      background: rgba(244, 67, 54, 0.05);
+      border-color: rgba(244, 67, 54, 0.3);
+      color: #ff8a80;
+    }
+
+    .field-error {
+      color: #ff8a80;
+      font-size: 12px;
+      display: none;
+      margin-top: 6px;
+      padding: 6px 8px;
+      background: rgba(244, 67, 54, 0.08);
+      border-radius: 4px;
+    }
+
+    .advanced-wrap {
+      margin-top: 12px;
+    }
+
+    .adv-panel {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 300ms ease;
+      padding: 0 14px;
+      border-radius: 8px;
+      border: 1px dashed rgba(212, 175, 55, 0.3);
+      background: rgba(212, 175, 55, 0.04);
+      margin-top: 8px;
+    }
+
+    .adv-panel.open {
+      max-height: 400px;
+      padding: 14px;
+    }
+
+    .adv-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .adv-col {
+      flex: 1;
+    }
+
+    .small-hint {
+      font-size: 12px;
+      color: #8892b0;
+      margin-top: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🤖 LangChain 智能助手</h1>
-            <p>由 DeepSeek 模型驱动的多功能助手</p>
-        </div>
+  <div class="card">
+    <h1>代码库模糊测试</h1>
+    <p>请输入仓库地址(GitHub)与模型信息，系统会在完成后返回/发送测试报告。</p>
 
-        <div class="content">
-            <!-- 智能对话部分 -->
-            <div class="section">
-                <div class="section-title">💬 智能对话</div>
-                
-                <div class="form-group">
-                    <label for="input_text">请输入你的问题</label>
-                    <textarea id="input_text" placeholder="例如：外面天气怎么样？"></textarea>
-                </div>
-
-                <div class="button-group">
-                    <button class="btn-primary" id="send_btn">🚀 发送</button>
-                </div>
-
-                <div id="reply_area" class="result-box" style="display: none;"></div>
-            </div>
-
-            <div class="divider"></div>
-
-            <!-- 模糊测试部分 -->
-            <div class="section">
-                <div class="section-title">🧪 代码模糊测试</div>
-                
-                <div class="form-group">
-                    <label for="code_url">代码仓库地址（Git URL）</label>
-                    <input type="text" id="code_url" placeholder="https://github.com/example/repo.git">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">邮箱地址（接收报告）</label>
-                    <input type="text" id="email" placeholder="your-email@example.com">
-                </div>
-
-                <div class="button-group">
-                    <button class="btn-primary" id="fuzz_btn">🧠 开始模糊测试</button>
-                </div>
-
-                <div id="fuzz_status" class="result-box" style="display: none;"></div>
-            </div>
-        </div>
+    <div class="form-row">
+      <div class="col">
+        <label for="code_url">代码仓库地址（必填）</label>
+        <input id="code_url" type="text" placeholder="https://github.com/your/repo.git" />
+        <div id="code_url_err" class="field-error">必填</div>
+      </div>
+      <div class="col">
+        <label for="email">邮箱地址（必填）</label>
+        <input id="email" type="email" placeholder="you@example.com" />
+        <div id="email_err" class="field-error">请输入有效邮箱</div>
+      </div>
     </div>
 
-    <script src="/static/script.js"></script>
+    <div style="margin-bottom:16px">
+      <label>选择模型</label>
+      <div class="radio-group">
+        <label><input type="radio" name="model" value="gpt-o3" checked /> gpt-4o</label>
+        <label><input type="radio" name="model" value="deepseek" /> deepseek</label>
+        <label><input type="radio" name="model" value="qwen3" /> qwen3-max</label>
+        <label><input type="radio" name="model" value="Claude" /> Claude-sonnet</label>
+        <label><input type="radio" name="model" value="Kimi" /> Kimi</label>
+      </div>
+    </div>
+
+    <!-- 高级参数下拉 -->
+    <div class="advanced-wrap">
+      <button id="toggle_adv" class="toggle-adv" aria-expanded="false">显示高级参数 ▾</button>
+      <div id="adv_panel" class="adv-panel" aria-hidden="true">
+        <strong style="color:#d4af37;letter-spacing:0.5px;display:block;margin-bottom:8px">⚙️ 高级参数</strong>
+        <div class="adv-row">
+          <div class="adv-col">
+            <label for="temperature">temperature（默认 0.5）</label>
+            <input id="temperature" type="number" step="0.1" min="0" max="1" placeholder="0.5" />
+          </div>
+          <div class="adv-col">
+            <label for="timeout">timeout（秒，默认 10）</label>
+            <input id="timeout" type="number" min="10" placeholder="10" />
+          </div>
+        </div>
+
+        <div class="adv-row">
+          <div class="adv-col">
+            <label for="fuzz_duration">模糊测试时长（秒，默认 900）</label>
+            <input id="fuzz_duration" type="number" min="1" placeholder="900" />
+          </div>
+          <div class="adv-col">
+            <label for="max_tokens">max_len（默认 1024）</label>
+            <input id="max_tokens" type="number" min="512" placeholder="1024" />
+          </div>
+        </div>
+
+        <div class="adv-row">
+          <div class="adv-col">
+            <label for="rounds">测试轮次</label>
+            <input id="rounds" type="number" min="1" placeholder="5" />
+          </div>
+
+        </div>
+        <div class="small-hint">这些参数为可选项，留空将使用默认值。</div>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button id="fuzz_btn" class="btn">开始模糊测试</button>
+      <button id="clear_btn" class="btn secondary">重置</button>
+    </div>
+
+    <div id="fuzz_status" class="result-box"></div>
+  </div>
+
+  <script src="/static/script.js"></script>
 </body>
 </html>
