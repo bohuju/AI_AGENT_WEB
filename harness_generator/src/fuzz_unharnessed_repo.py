@@ -220,9 +220,6 @@ class NonOssFuzzHarnessGenerator:
         """
         Execute the end-to-end workflow.
         """
-        print("[*] Pass -A: generate output.dot …")
-        from test import run_analyzer
-        run_analyzer(input_dir=self.repo_root,output_path=self.repo_root/"output.dot")
         print("[*] Pass A: Planning candidate fuzz targets …")
         self._pass_plan_targets()
 
@@ -271,12 +268,9 @@ class NonOssFuzzHarnessGenerator:
         output_path = self.repo_root/"output.dot"
         N = 15
 
-        with output_path.open("r", encoding="utf-8") as f:
-            content = "".join([next(f) for _ in range(N) if not f.closed])
         instructions = textwrap.dedent(
             f"""
             **Goal:** Analyze this repository and produce a realistic fuzz plan.
-            first analyze the call graph in `output.dot`.{content}
             **Deliverables (create inside `{FUZZ_DIR}/`):**
             1) `PLAN.md` — brief rationale describing the top 3–10 *public, attacker-reachable*
                entrypoints (file/packet/string parsers) with justification for real-world reachability,

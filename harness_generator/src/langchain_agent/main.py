@@ -46,8 +46,8 @@ class login_model(BaseModel):
 
 @app.post("/login_check")
 async def login_check(data: login_model):
-    admin_user = os.environ.get("ADMIN_USER", "bohuju")
-    admin_pass = os.environ.get("ADMIN_PASS", "lsl1234")
+    admin_user = os.environ.get("ADMIN_USER", "Qiangwang")
+    admin_pass = os.environ.get("ADMIN_PASS", "XDUT1anhengO0O")
     if data.username == admin_user and data.password == admin_pass:
         return {"success": True}
     return {"success": False, "message": "用户名或密码错误"}
@@ -64,10 +64,12 @@ def chat(request: chat_model = Body(...)):
     return {"reply": result}
 
 @app.post("/fuzz_code")#对代码仓库进行模糊测试(后续添加发送邮件功能)
-def fuzz_code(request: fuzz_model = Body(...)):
+async def fuzz_code(request: fuzz_model = Body(...)):
     """对代码仓库进行模糊测试"""
     print("Received fuzzing request for URL:", request.code_url)
-    fuzz_logic(request.code_url,request.max_tokens, request.time_budget)
+    loop = asyncio.get_event_loop()
+    await loop.run_in_executor(executor, fuzz_logic, request.code_url, request.max_tokens, request.time_budget,request.email)
+    #fuzz_logic(request.code_url,request.max_tokens, request.time_budget)
     return {"status": "Fuzzing report generated."}
 
 @app.get("/", response_class=HTMLResponse)
